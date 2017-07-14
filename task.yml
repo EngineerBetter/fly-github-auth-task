@@ -10,7 +10,7 @@ inputs:
 - name: fly-github-auth-task
 
 run:
-  path: task.sh
+  path: ./task.sh
   dir: fly-github-auth-task
 
 outputs:
