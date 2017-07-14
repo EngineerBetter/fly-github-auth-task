@@ -17,7 +17,7 @@ var _ = Describe("UserLogin", func() {
 	var page *agouti.Page
 	var session *gexec.Session
 
-	var username, password, atc, team string
+	var username, password, atc, team, outputDir string
 
 	BeforeEach(func() {
 		var found bool
@@ -28,6 +28,8 @@ var _ = Describe("UserLogin", func() {
 		atc, found = os.LookupEnv("ATC_URL")
 		Expect(found).To(BeTrue())
 		team, found = os.LookupEnv("TEAM_NAME")
+		Expect(found).To(BeTrue())
+		outputDir, found = os.LookupEnv("OUTPUT_DIR")
 		Expect(found).To(BeTrue())
 
 		var err error
@@ -71,6 +73,6 @@ var _ = Describe("UserLogin", func() {
 		token := re.FindStringSubmatch(html)
 		Expect(len(token)).To(Equal(2))
 
-		ioutil.WriteFile("bearer-token", []byte(token[1]), 0644)
+		ioutil.WriteFile(outputDir+"bearer-token", []byte(token[1]), 0644)
 	})
 })

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-set -eu
+set -ea
+
+OUTPUT_DIR=${OUTPUT_DIR:-$PWD}
+
+set -u
 
 export GOPATH=/gopath
 export PATH=$PATH:$GOPATH/bin
