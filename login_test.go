@@ -73,6 +73,6 @@ var _ = Describe("UserLogin", func() {
 		token := re.FindStringSubmatch(html)
 		Expect(len(token)).To(Equal(2))
 
-		ioutil.WriteFile(outputDir+"bearer-token", []byte(token[1]), 0644)
+		ioutil.WriteFile(outputDir+"/bearer-token", []byte(token[1]), 0644)
 	})
 })
