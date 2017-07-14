@@ -1,0 +1,24 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: engineerbetter/fly-github-auth-task
+
+inputs:
+- name: fly-github-auth-task
+
+run:
+  path: task.sh
+  dir: fly-github-auth-task
+
+outputs:
+- name: bearer-token
+
+params:
+  OUTPUT_DIR: ../bearer-token
+  GITHUB_USERNAME:
+  GITHUB_PASSWORD:
+  ATC_URL:
+  TEAM_NAME:
