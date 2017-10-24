@@ -53,7 +53,7 @@ resources:
 
 ## Using a Token
 
-Write the token into a `./flyrc` file, and you'll be automagically auth'd.
+Write the token into a `~/.flyrc` file, and you'll be automagically auth'd.
 
 Here's a BASH snippet to do just that:
 
@@ -61,6 +61,7 @@ Here's a BASH snippet to do just that:
 # Load contents of file into env var
 export ATC_BEARER_TOKEN=$(<bearer-token/bearer-token)
 
+# Write ~/.flyrc
 cat <<ENDOFSCRIPT > ~/.flyrc
 targets:
   ${CONCOURSE_TARGET_NAME}:
